@@ -25,9 +25,10 @@
     </div>
     <br>
     <h2>绑定多个Class</h2>
-    <div :style="'color:'+color">绑定style</div>
+    <div :style="'color:'+color">绑定style</div> <!--绑定单个style-->
     <br>
 
+    <div :style="{'color': activeColor, 'fontSize': fontSize}">绑定多个style</div> <!--绑定多个style-->
 
   </div>
 </template>
@@ -43,7 +44,8 @@ export default {
       baseClass: "base",
       flag: false,            //在结合三目运算中如果isActive是false，那么就会选用errorClass
       color: "red",
-
+      activeColor: 'blue',
+      fontSize: "20px"
 
     };
   },
