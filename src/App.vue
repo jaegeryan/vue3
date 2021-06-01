@@ -9,15 +9,19 @@
     <div class="red"></div>
     <br>
     <button @click="changeClass()">点我换色</button>
-    <div :class="myClass"> <!-- v-bind:class --> 可更换值 </div> <!-- 1.2、v- bind: class绑定对象  -->
+    <div :class="myClass"> <!-- v-bind:class --> 可更换值</div> <!-- 1.2、v- bind: class绑定对象  -->
     <br>
     <h2>class绑定多个属性</h2>
-    <div class="blue" :class="{'active': isActive,'red': isRed }"> <!-- 1.3 v-bind: class结合class的使用 -->
+    <div :class="{'active': isActive,'red': isRed }" class="blue"> <!-- 1.3 v-bind: class结合class的使用 -->
       div
     </div>
     <br>
     <div :class="[errorClass, baseClass]">  <!-- 1.4、数组语法 -->
       div
+    </div>
+    <br>
+    <div :class="[flag ? baseClass : errorClass]">  <!-- 1.5、数组语法结合三目运算 -->
+      数组语法 结合三目运算绑定
     </div>
 
   </div>
@@ -31,7 +35,8 @@ export default {
       isActive: true,       //这个不写就不显示, 或者写false就不显示
       isRed: false,         // 同上
       errorClass: "error",
-      baseClass: "base"
+      baseClass: "base",
+      flag: false            //在结合三目运算中如果isActive是false，那么就会选用errorClass
     };
   },
   methods: {
