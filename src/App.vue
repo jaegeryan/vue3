@@ -34,6 +34,10 @@
     <div :style="styleObject">
       绑定多个style第二种写法
     </div>
+    <br>
+    <div :style="[baseStyle, orangeStyle]">
+      绑定多个style第三种写法 数组的写法
+    </div>
   </div>
 </template>
 <script>
@@ -53,7 +57,16 @@ export default {
       styleObject: {
         color: 'red',
         fontSize: '40px'
-      }
+      },
+      baseStyle: {
+        width: "200px",
+        height: "200px",
+        fontSize: "20px"
+      },
+      orangeStyle: {
+        background: "orange"
+      },
+
     };
   },
   methods: {
