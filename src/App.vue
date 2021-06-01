@@ -23,6 +23,11 @@
     <div :class="[flag ? baseClass : errorClass]">  <!-- 1.5、数组语法结合三目运算 -->
       数组语法 结合三目运算绑定
     </div>
+    <br>
+    <h2>绑定多个Class</h2>
+    <div :style="'color:'+color">绑定style</div>
+    <br>
+
 
   </div>
 </template>
@@ -36,7 +41,10 @@ export default {
       isRed: false,         // 同上
       errorClass: "error",
       baseClass: "base",
-      flag: false            //在结合三目运算中如果isActive是false，那么就会选用errorClass
+      flag: false,            //在结合三目运算中如果isActive是false，那么就会选用errorClass
+      color: "red",
+
+
     };
   },
   methods: {
