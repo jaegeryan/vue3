@@ -38,6 +38,18 @@
     <div :style="[baseStyle, orangeStyle]">
       绑定多个style第三种写法 数组的写法
     </div>
+    <br>
+    <ul>
+      <li v-for="(item,index) in list" :key="index" :class="{'red':index===0,'blue':index===1}">
+        {{ item }}
+      </li>
+    </ul>
+    <br>
+    <ul>
+      <li v-for="(item,index) in list" :key="index" :style="[index===0?styleRed:null, index===1?styleBlue:null]"> <!-- 建议使用class -->
+        {{ item }}
+      </li>
+    </ul>
   </div>
 </template>
 <script>
@@ -65,6 +77,13 @@ export default {
       },
       orangeStyle: {
         background: "orange"
+      },
+      list: ['马化腾', '刘强东', '联想', '马化腾0', '刘强东0', '联想0'],
+      styleRed: {
+        color: 'red',
+      },
+      styleBlue: {
+        color: 'blue',
       },
 
     };
